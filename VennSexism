@@ -1,0 +1,25 @@
+import pandas as pd
+from matplotlib_venn import venn3
+import matplotlib.pyplot as plt
+
+# Define file paths
+file_paths = [
+    '/home/u161198/new_env/WordFrequencies/Error_Analysis_W2V_Sexism.csv',
+    '/home/u161198/new_env/WordFrequencies/Error_Analysis_BETO_Sexism.csv',
+    '/home/u161198/new_env/WordFrequencies/Error_Analysis_XGLM_Sexism.csv'
+]
+
+# Read the datasets
+df1 = pd.read_csv(file_paths[0])
+df2 = pd.read_csv(file_paths[1])
+df3 = pd.read_csv(file_paths[2])
+
+# Extract misclassified texts
+misclassified1 = set(df1['text'])
+misclassified2 = set(df2['text'])
+misclassified3 = set(df3['text'])
+
+# Plot Venn diagram
+venn3([misclassified1, misclassified2, misclassified3], ('W2V Sexism', 'BETO Sexism', 'XGLM Sexism'))
+plt.title('Overlap of Misclassified Tweets')
+plt.show()
