@@ -14,7 +14,7 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_sc
 
 # Decrypt and read the training dataset
 file_path = '/home/u161198/new_env/Datasets/es_AMI_TrainingSet_NEW (2).xlsx'
-password = '!20AMI_ES18?'
+password = 
 
 file = msoffcrypto.OfficeFile(open(file_path, 'rb'))
 file.load_key(password=password)
