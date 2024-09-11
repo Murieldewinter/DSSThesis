@@ -12,7 +12,7 @@ import io
 
 # Decrypt and read the training dataset
 file_path_train = '/home/u161198/new_env/Datasets/es_AMI_TrainingSet_NEW (2).xlsx'
-password_train = '!20AMI_ES18?'
+password_train = 
 
 file_train = msoffcrypto.OfficeFile(open(file_path_train, 'rb'))
 file_train.load_key(password=password_train)
